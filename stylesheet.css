@@ -1,0 +1,46 @@
+head,body{
+  text-align: center;
+}
+
+#calculatorInterface{
+  border: 2px solid black;
+  border-radius: 30px;
+  align-items: center;
+  padding: 8px;
+  margin-top: 15px;
+  display: inline-block;
+  background-color: black;
+}
+
+#clearButton{
+  border-radius: 45px;
+  height:40px;
+  width: 45px;
+  background-color: rgb(212,212,210);
+  color: rgb(0,0,0);
+  font-size: large;
+}
+
+#display{
+  height: 36px;
+  border-radius: 7px;
+}
+.buttonNumber{
+  border-radius: 45px;
+  height:40px;
+  width: 45px;
+  background-color: rgb(80,80,80);
+  color: rgb(225,225,225);
+  font-size: x-large;
+  margin: 3px;
+}
+
+.operator{
+  border-radius: 45px;
+  height:40px;
+  width: 45px;
+  background-color: rgb(225,149,0);
+  color: rgb(225,225,225);
+  font-size: x-large;
+  margin: 3px;
+}
