@@ -1,7 +1,3 @@
-// const number = document.getElementById('one');
-// number.addEventListener('click', (e) =>{
-// console.log(e.target.value);
-// });
 const display = document.getElementById('display');
 
 const numberButtons = document.querySelectorAll('.buttonNumber');

@@ -45,3 +45,12 @@ head,body{
   margin: 3px;
 }
 
+#equalSign{
+  border-radius: 45px;
+  height:40px;
+  width: 45px;
+  background-color: rgb(225,149,0);
+  color: rgb(225,225,225);
+  font-size: x-large;
+  margin: 3px;
+}
