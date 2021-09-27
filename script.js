@@ -9,7 +9,8 @@ numberButtons.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {    
     if(operator===undefined){
       firstOperand = e.target.value;
-      display.value = firstOperand;
+      display.value = display.value + firstOperand ;
+      console.log(display.value);
     }
     else{
       secondOperand = e.target.value;
