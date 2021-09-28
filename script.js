@@ -1,16 +1,16 @@
 const display = document.getElementById('display');
 
-let firstOperand;
-let operator;
-let secondOperand;
+let firstOperand="";
+let operator="";
+let secondOperand="";
 
 const numberButtons = document.querySelectorAll('.buttonNumber');
 numberButtons.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {    
-    if(operator===undefined){
-      firstOperand = e.target.value;
-      display.value = display.value + firstOperand ;
-      console.log(display.value);
+    if(!operator){
+      let number = e.target.value;
+      firstOperand += number;
+      display.value = firstOperand;
     }
     else{
       secondOperand = e.target.value;
