@@ -35,15 +35,12 @@ equalButton.addEventListener('click', (e) => {
   } 
   else if(operator==="-"){
     display.value = parseInt(firstOperand)-parseInt(secondOperand);
-    console.log(display.value);
   }
   else if(operator==="X"){
     display.value = parseInt(firstOperand)*parseInt(secondOperand);
-    console.log(display.value);
   }
   else{
     display.value = parseInt(firstOperand)/parseInt(secondOperand);
-    console.log(display.value);
   }
 });
 
