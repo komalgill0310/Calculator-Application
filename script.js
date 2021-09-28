@@ -8,12 +8,13 @@ const numberButtons = document.querySelectorAll('.buttonNumber');
 numberButtons.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {    
     if(!operator){
-      let number = e.target.value;
-      firstOperand += number;
+      let firstNumber = e.target.value;
+      firstOperand += firstNumber;
       display.value = firstOperand;
     }
     else{
-      secondOperand = e.target.value;
+      let secondNumber = e.target.value;
+      secondOperand += secondNumber;
       display.value = secondOperand;
     }
   });
