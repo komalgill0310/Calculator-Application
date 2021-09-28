@@ -40,7 +40,10 @@ equalButton.addEventListener('click', (e) => {
     display.value = parseInt(firstOperand)*parseInt(secondOperand);
   }
   else{
-    display.value = parseInt(firstOperand)/parseInt(secondOperand);
+    let divisionNumber = parseInt(firstOperand)/parseInt(secondOperand);
+    display.value = divisionNumber.toFixed(3);
+    console.log(display.value);
+
   }
 });
 
