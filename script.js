@@ -24,20 +24,21 @@ const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach(operatorButton => {
   operatorButton.addEventListener('click', (e) => {
     operator = e.target.value;
-    display.value = operator;
+    display.value += operator;
+    console.log(display.value);
   });
 });
 
 const equalButton = document.querySelector('#equalSign');
 equalButton.addEventListener('click', (e) => {
   if(operator==="+"){
-    display.value = parseInt(firstOperand)+parseInt(secondOperand);
+    display.value = parseInt(firstOperand) + parseInt(secondOperand);
   } 
   else if(operator==="-"){
-    display.value = parseInt(firstOperand)-parseInt(secondOperand);
+    display.value = parseInt(firstOperand) - parseInt(secondOperand);
   }
   else if(operator==="X"){
-    display.value = parseInt(firstOperand)*parseInt(secondOperand);
+    display.value = parseInt(firstOperand) * parseInt(secondOperand);
   }
   else{
     let divisionNumber = parseInt(firstOperand)/parseInt(secondOperand);
