@@ -9,13 +9,13 @@ numberButtons.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {    
     if(!operator){
       let firstNumber = e.target.value;
-      firstOperand += firstNumber;
+      firstOperand = firstNumber;
       display.value = firstOperand;
       console.log(display.value);
     }
     else{
       let secondNumber = e.target.value;
-      secondOperand += secondNumber;
+      secondOperand = secondNumber;      
       display.value += secondOperand;
       console.log(display.value);
     }
