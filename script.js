@@ -11,11 +11,13 @@ numberButtons.forEach(numberButton => {
       let firstNumber = e.target.value;
       firstOperand += firstNumber;
       display.value = firstOperand;
+      console.log(display.value);
     }
     else{
       let secondNumber = e.target.value;
       secondOperand += secondNumber;
-      display.value = secondOperand;
+      display.value += secondOperand;
+      console.log(display.value);
     }
   });
 });
