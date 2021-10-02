@@ -33,19 +33,21 @@ operatorButtons.forEach(operatorButton => {
 
 const equalButton = document.querySelector('#equalSign');
 equalButton.addEventListener('click', (e) => {
-  if(operator==="+"){
-    display.value = parseInt(firstOperand) + parseInt(secondOperand);
-  } 
-  else if(operator==="-"){
-    display.value = parseInt(firstOperand) - parseInt(secondOperand);
+    if(operator==="+"){
+      display.value = parseInt(firstOperand) + parseInt(secondOperand);
+    } 
+    else if(operator==="-"){
+      display.value = parseInt(firstOperand) - parseInt(secondOperand);
+    }
+    else if(operator==="X"){
+      display.value = parseInt(firstOperand) * parseInt(secondOperand);
+    }
+    else{
+      let divisionNumber = parseInt(firstOperand)/parseInt(secondOperand);
+      display.value = divisionNumber.toFixed(3);
+    }
   }
-  else if(operator==="X"){
-    display.value = parseInt(firstOperand) * parseInt(secondOperand);
-  }
-  else{
-    let divisionNumber = parseInt(firstOperand)/parseInt(secondOperand);
-    display.value = divisionNumber.toFixed(3);
-  }
+
 });
 
 const resetButton = document.querySelector('#clearButton');
@@ -53,4 +55,9 @@ resetButton.addEventListener('click', () => {
   display.value = "0";
 });
 
+function calculate(){
+  if(firstOperand !==null && operator !==null && secondOperand !==null){
+    if(operatorButtons.clicked == true || equalButton.clicked == true){
 
+    }
+}
