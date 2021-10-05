@@ -27,6 +27,12 @@ operatorButtons.forEach(operatorButton => {
   operatorButton.addEventListener('click', (e) => {
     if(firstOperand!=0 && secondOperand!= 0 && operator!=0)
     {
+      if(document.getElementById('equalSign').clicked==true){
+        display.value =parseInt(firstOperand)+parseInt(secondOperand);  
+    operator = e.target.value;
+    display.value += operator;
+    console.log(display.value);
+      }
     display.value =parseInt(firstOperand)+parseInt(secondOperand);  
     operator = e.target.value;
     display.value += operator;
