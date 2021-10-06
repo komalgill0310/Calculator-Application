@@ -24,32 +24,40 @@ numberButtons.forEach(numberButton => {
 
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach(operatorButton => {
-  operatorButton.addEventListener('click', (e) => {  
-    if(operator.clicked)
-        operator = e.target.value;
-        display.value += operator;
-        console.log(display.value);     
-        console.log(operator.clicked);        
+  operatorButton.addEventListener('click', (e) => { 
+    if(firstOperand,operator,secondOperand!=0) {
+      if(!!operator || document.getElementById('equalSign')){
+        if(operator==="+"){
+          display.value = parseInt(firstOperand) +parseInt(secondOperand);
+        } 
+      }
+    }
+   
+    else{
+      operator = e.target.value;
+      display.value += operator;
+      console.log(display.value); 
+    }                  
 });
 });
 
-const equalButton = document.querySelector('#equalSign');
-equalButton.addEventListener('click', (e) => {
-    if(operator==="+"){
-      display.value = parseInt(firstOperand) + parseInt(secondOperand);
-    } 
-    else if(operator==="-"){
-      display.value = parseInt(firstOperand) - parseInt(secondOperand);
-    }
-    else if(operator==="X"){
-      display.value = parseInt(firstOperand) * parseInt(secondOperand);
-    }
-    else{
-      let divisionNumber = parseInt(firstOperand)/
-      parseInt(secondOperand);
-      display.value = divisionNumber.toFixed(3);
-    }
-});
+// const equalButton = document.querySelector('#equalSign');
+// equalButton.addEventListener('click', (e) => {
+//     if(operator==="+"){
+//       display.value = parseInt(firstOperand) + parseInt(secondOperand);
+//     } 
+//     else if(operator==="-"){
+//       display.value = parseInt(firstOperand) - parseInt(secondOperand);
+//     }
+//     else if(operator==="X"){
+//       display.value = parseInt(firstOperand) * parseInt(secondOperand);
+//     }
+//     else{
+//       let divisionNumber = parseInt(firstOperand)/
+//       parseInt(secondOperand);
+//       display.value = divisionNumber.toFixed(3);
+//     }
+// });
 
 const resetButton = document.querySelector('#clearButton');
 resetButton.addEventListener('click', () => {
