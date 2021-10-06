@@ -24,49 +24,48 @@ numberButtons.forEach(numberButton => {
 
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach(operatorButton => {
-  operatorButton.addEventListener('click', (e) => {
-    if(firstOperand!=0 && secondOperand!= 0 && operator!=0)
-    {
-      if(document.getElementById('equalSign').clicked==true){
-        calculate();
-    //     display.value =parseInt(firstOperand)+parseInt(secondOperand);  
-    // operator = e.target.value;
-    // display.value += operator;
-    // console.log(display.value);
-    //   }
-    // display.value =parseInt(firstOperand)+parseInt(secondOperand);  
-    // operator = e.target.value;
-    // display.value += operator;
-    // console.log(display.value);    
-    }}
-    else {
-      operator = e.target.value;
-      display.value += operator;
-      console.log(display.value);
-    }    
+  operatorButton.addEventListener('click', (e) => {  
+    if(operator.clicked)
+        operator = e.target.value;
+        display.value += operator;
+        console.log(display.value);     
+        console.log(operator.clicked);        
 });
 });
 
-// const equalButton = document.querySelector('#equalSign');
-// equalButton.addEventListener('click', (e) => {
-//     if(operator==="+"){
-//       display.value = parseInt(firstOperand) + parseInt(secondOperand);
-//     } 
-//     else if(operator==="-"){
-//       display.value = parseInt(firstOperand) - parseInt(secondOperand);
-//     }
-//     else if(operator==="X"){
-//       display.value = parseInt(firstOperand) * parseInt(secondOperand);
-//     }
-//     else{
-//       let divisionNumber = parseInt(firstOperand)/
-//       parseInt(secondOperand);
-//       display.value = divisionNumber.toFixed(3);
-//     }
-// });
+const equalButton = document.querySelector('#equalSign');
+equalButton.addEventListener('click', (e) => {
+    if(operator==="+"){
+      display.value = parseInt(firstOperand) + parseInt(secondOperand);
+    } 
+    else if(operator==="-"){
+      display.value = parseInt(firstOperand) - parseInt(secondOperand);
+    }
+    else if(operator==="X"){
+      display.value = parseInt(firstOperand) * parseInt(secondOperand);
+    }
+    else{
+      let divisionNumber = parseInt(firstOperand)/
+      parseInt(secondOperand);
+      display.value = divisionNumber.toFixed(3);
+    }
+});
 
 const resetButton = document.querySelector('#clearButton');
 resetButton.addEventListener('click', () => {
   display.value = "0";
 });
+
+
+// function calculate(firstOperand, operator, secondOperand){
+//   let result; 
+
+//   switch(operator){
+//     case"+":
+//     result = parseInt(firstOperand) + parseInt(secondOperand);
+//     break;
+//   }
+//   console.log(result);
+//   return result;
+// }
 
