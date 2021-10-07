@@ -8,14 +8,12 @@ const numberButtons = document.querySelectorAll('.buttonNumber');
 numberButtons.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {    
     if(!operator){
-      let firstNumber = e.target.value;
-      firstOperand = firstNumber;
-      display.value = firstOperand;
+      firstOperand = e.target.value;
+      display.value += firstOperand;
       console.log(display.value);
     }
     else{
-      let secondNumber = e.target.value;
-      secondOperand = secondNumber;      
+      secondOperand = e.target.value;     
       display.value += secondOperand;
       console.log(display.value);
     }
@@ -24,40 +22,51 @@ numberButtons.forEach(numberButton => {
 
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach(operatorButton => {
-  operatorButton.addEventListener('click', (e) => { 
-    if(firstOperand,operator,secondOperand!=0) {
-      if(!!operator || document.getElementById('equalSign')){
-        if(operator==="+"){
-          display.value = parseInt(firstOperand) +parseInt(secondOperand);
-        } 
+  operatorButton.addEventListener('click', (e) => {
+     if(!operator){
+       operator = e.target.value;
+       display.value += operator;
+       console.log(display.value);
+     }
+     else{
+       switch(operator){
+       case"+":
+       display.value = parseInt(firstOperand) + parseInt(secondOperand);
+       break;
+       case"-":
+       display.value = parseInt(firstOperand) - parseInt(secondOperand);
+       break;
+       case"X":
+       display.value = parseInt(firstOperand) * parseInt(secondOperand);
+       break;
+       default:
+       display.value = parseInt(firstOperand) / parseInt(secondOperand);
+       display.value = divisionNumber.toFixed(3);
+       break;
       }
-    }
-   
-    else{
-      operator = e.target.value;
-      display.value += operator;
+      let newOperator = e.target.value;
+      display.value += newOperator;
       console.log(display.value); 
-    }                  
-});
-});
+     }
+  });
 
-// const equalButton = document.querySelector('#equalSign');
-// equalButton.addEventListener('click', (e) => {
-//     if(operator==="+"){
-//       display.value = parseInt(firstOperand) + parseInt(secondOperand);
-//     } 
-//     else if(operator==="-"){
-//       display.value = parseInt(firstOperand) - parseInt(secondOperand);
-//     }
-//     else if(operator==="X"){
-//       display.value = parseInt(firstOperand) * parseInt(secondOperand);
-//     }
-//     else{
-//       let divisionNumber = parseInt(firstOperand)/
-//       parseInt(secondOperand);
-//       display.value = divisionNumber.toFixed(3);
-//     }
-// });
+const equalButton = document.querySelector('#equalSign');
+equalButton.addEventListener('click', () => {
+    if(operator==="+"){
+      display.value = parseInt(firstOperand) + parseInt(secondOperand);
+    } 
+    else if(operator==="-"){
+      display.value = parseInt(firstOperand) - parseInt(secondOperand);
+    }
+    else if(operator==="X"){
+      display.value = parseInt(firstOperand) * parseInt(secondOperand);
+    }
+    else{
+      let divisionNumber = parseInt(firstOperand)/
+      parseInt(secondOperand);
+      display.value = divisionNumber.toFixed(3);
+    }
+});
 
 const resetButton = document.querySelector('#clearButton');
 resetButton.addEventListener('click', () => {
@@ -77,3 +86,53 @@ resetButton.addEventListener('click', () => {
 //   return result;
 // }
 
+// return (operator==="+")? display.value = parseInt(firstOperand) + parseInt(secondOperand):
+// (operator==="-")?display.value = parseInt(firstOperand) - parseInt(secondOperand):
+// operator==="X"? console.log(parseInt(firstOperand)*
+// parseInt(secondOperand)) :
+// display.value = parseInt(firstOperand) / parseInt(secondOperand);
+
+    // if(!operator){
+    //   operator = e.target.value;
+    //   display.value += operator;
+    //   console.log(display.value);
+    // }
+  
+    // if(firstOperand,operator,secondOperand!=0) {
+    //   if(!!operator){
+    //     if(operator==="-"){
+    //       display.value = parseInt(firstOperand) -parseInt(secondOperand);
+    //       display.value += operator;
+    //       console.log(display.value);
+    //     } 
+    //   }
+    // }   
+    // else{
+    //   operator = e.target.value;
+    //   display.value += operator;
+    //   console.log(display.value); 
+    // }   
+    
+    // if(firstOperand && secondOperand){
+    //   //calculate
+    //   if(operator==="+"){
+    //     display.value = parseInt(firstOperand) + parseInt(secondOperand);
+    //   } 
+    //   else if(operator==="-"){
+    //     display.value = parseInt(firstOperand) - parseInt(secondOperand);
+    //   }
+    //   else if(operator==="X"){
+    //     display.value = parseInt(firstOperand) * parseInt(secondOperand);
+    //   }
+    //   else{
+    //     let divisionNumber = parseInt(firstOperand)/
+    //     parseInt(secondOperand);
+    //     display.value = divisionNumber.toFixed(3);
+    //   }
+    //   }
+    //   else{
+    //     operator = e.target.value;
+    //     display.value += operator;
+    //     console.log(display.value);
+    //   }  
+  });
